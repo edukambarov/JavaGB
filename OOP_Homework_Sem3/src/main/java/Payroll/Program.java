@@ -52,16 +52,20 @@ public class Program {
     public static void main(String[] args) {
 
         Employee[] employees = generateEmployees(7);
+        String status = "Инициализация";
 
-        for (int i=0; i<35; i++) System.out.print("=");
-        System.out.println();
-        System.out.println("Инициализация");
-        for (int i=0; i<35; i++) System.out.print("=");
-        System.out.println();
-        for (Employee employee : employees) {
-            System.out.println(employee);
+        public void printWithStatus() {
+            for (int i = 0; i < 35; i++) System.out.print("=");
+            System.out.println();
+            System.out.println(status);
+            for (int i = 0; i < 35; i++) System.out.print("=");
+            System.out.println();
+            for (Employee employee : employees) {
+                System.out.println(employee);
+            }
+            System.out.println();
         }
-        System.out.println();
+
 
         Arrays.sort(employees, new SalaryComparator(SortType.Ascending));
 
