@@ -54,7 +54,7 @@ public class Box<T extends Fruit> {
     */
     public void addFruit(T item) {
         if (IsTheSameFruit(item)){
-            { if (fruits.size() < 10)
+            if (fruits.size() < 10) {
                 fruits.add(0, item);
            }
        }
