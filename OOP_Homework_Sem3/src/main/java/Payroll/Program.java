@@ -22,13 +22,8 @@ public class Program {
        int age2 = random.nextInt(18,45);
        Freelancer freelancer = new Freelancer(surnames2[random.nextInt(surnames2.length)], names2[random.nextInt(names2.length)], salary2, age2);
        return freelancer;
-    }
-    /**
-     * TODO: Переработать метод generateEmployees. Метод должен возвращать массив сотрудников
-     *  разных типов (Worker, Freelancer), метод должен быть ОДИН!
-     *
-     * DONE!
-     */
+    }gi
+
     static Employee[] generateEmployees(int count){
         Employee[] employees = new Employee[count];
         for (int i = 0; i < employees.length; i++) {
@@ -36,35 +31,23 @@ public class Program {
             if (choice==0) employees[i] = (Freelancer)generateFreelancer();
             else if (choice==1) employees[i] = (Worker)generateWorker();
             else break;
-            }
-        return employees;
         }
+        return employees;
+    }
 
-
-//    static Worker[] generateEmployees(int count){
-//        Worker[] employees = new Worker[count];
-//        for (int i = 0; i < employees.length; i++)
-//           employees[i] = generateWorker()
-//        return employees;
-//    }
-
-
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         Employee[] employees = generateEmployees(7);
-        String status = "Инициализация";
 
-        public void printWithStatus() {
-            for (int i = 0; i < 35; i++) System.out.print("=");
-            System.out.println();
-            System.out.println(status);
-            for (int i = 0; i < 35; i++) System.out.print("=");
-            System.out.println();
-            for (Employee employee : employees) {
-                System.out.println(employee);
-            }
-            System.out.println();
+        for (int i = 0; i < 35; i++) System.out.print("=");
+        System.out.println();
+        System.out.println("Инициализация");
+        for (int i = 0; i < 35; i++) System.out.print("=");
+        System.out.println();
+        for (Employee employee : employees) {
+            System.out.println(employee);
         }
+        System.out.println();
 
 
         Arrays.sort(employees, new SalaryComparator(SortType.Ascending));
