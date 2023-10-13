@@ -54,9 +54,10 @@ public class Box<T extends Fruit> {
     */
     public void addFruit(T item) {
         if (IsTheSameFruit(item)){
-            { if (fruits.size() < 10)
+            if (fruits.size() < 10) {
                 fruits.add(0, item);
            }
+
        }
         else System.out.println("Вы пытаетесь положить в одну коробку разные фрукты. Это недопустимо!");
     }
