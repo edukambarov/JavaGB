@@ -3,27 +3,34 @@ package ru.geekbrains.lesson5.models;
 import java.util.Date;
 
 public class Reservation {
+
     private static int counter = 1000;
     private final int id;
-    private Table table;
-    private Date date;
-    private String nameClients;
-    {
-        id = ++counter;
-    }
 
-    public Reservation(Table table, Date date, String nameClients) {
-        this.table = table;
+    private String name;
+
+    public Reservation(Date date, String name) {
+        this.name = name;
         this.date = date;
-        this.nameClients = nameClients;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setTable(Table table) {
-        this.table = table;
+    public String getName() {
+        return name;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    private Date date;
+
+    {
+        id = ++counter;
+    }
+
 
 }

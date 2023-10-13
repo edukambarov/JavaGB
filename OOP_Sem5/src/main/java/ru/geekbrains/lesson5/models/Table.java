@@ -6,24 +6,27 @@ import java.util.Locale;
 
 public class Table {
 
-    public int getNumber() {
-        return number;
+    private static int counter;
+    private final int no;
+
+    {
+        no = ++counter;
     }
+
+    private final Collection<Reservation> reservations = new ArrayList<>();
 
     public Collection<Reservation> getReservations() {
         return reservations;
     }
 
-    private final Collection<Reservation> reservations = new ArrayList<>();
-    private static int counter;
-    private final int number;
-    {
-        number = ++counter;
+    public int getNo() {
+        return no;
     }
+
 
     @Override
     public String toString() {
-        return String.format("Столик № %d", number);
+        return String.format(Locale.getDefault(), "Столик #%d", no);
     }
 
 }
